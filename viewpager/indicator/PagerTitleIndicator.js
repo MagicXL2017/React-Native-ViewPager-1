@@ -30,7 +30,6 @@ export default class PagerTitleIndicator extends Component {
     selectedItemTextStyle: Text.propTypes.style,
     selectedBorderStyle: ViewPropTypes.style,
     renderTitle: PropTypes.func,
-    indicatorPositionTop: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -110,7 +109,7 @@ export default class PagerTitleIndicator extends Component {
     })
     return (
       <View style={[styles.indicatorContainer, this.props.style]}>
-        {indicatorPositionTop === true ? titleViews : null}
+        {titleViews}
         <ScrollView
           scrollEventThrottle={1}
           onScroll={e => {
@@ -125,7 +124,6 @@ export default class PagerTitleIndicator extends Component {
           style={{flex: 1}}
         >
         </ScrollView>
-        {indicatorPositionTop === true ? null : titleViews}
       </View>
     )
   }
